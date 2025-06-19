@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circutBoardWorkFlow", "circutBoardWorkFlow\circutBoardWorkFlow.csproj", "{E7665768-7968-4279-9A7F-5E504DEF528B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circutBoardWorkFlow.Tests", "circutBoardWorkFlow.Tests\circutBoardWorkFlow.Tests.csproj", "{2322AB0C-0AF0-4725-8B60-60982BB312A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7665768-7968-4279-9A7F-5E504DEF528B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7665768-7968-4279-9A7F-5E504DEF528B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7665768-7968-4279-9A7F-5E504DEF528B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7665768-7968-4279-9A7F-5E504DEF528B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2322AB0C-0AF0-4725-8B60-60982BB312A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2322AB0C-0AF0-4725-8B60-60982BB312A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2322AB0C-0AF0-4725-8B60-60982BB312A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2322AB0C-0AF0-4725-8B60-60982BB312A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4C0E605-3DF7-4289-9810-9868F0048949}
+	EndGlobalSection
+EndGlobal
