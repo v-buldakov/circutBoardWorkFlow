@@ -7,8 +7,10 @@
         public Status NewStatus { get; set; }
         public DateTimeOffset Updated { get; set; }
 
-        static public ICollection<HistoryRecord> ConvertFromEntity(ICollection<Entity.HistoryRecord> records)
+        static public ICollection<HistoryRecord> ConvertFromEntity(ICollection<Entity.HistoryRecord>? records)
         {
+            if (records == null || records.Count == 0)
+                return [];
             return [.. records.Select(CreateNewRecord)];
         }
 

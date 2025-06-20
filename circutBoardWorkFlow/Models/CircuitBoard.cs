@@ -1,9 +1,13 @@
-﻿namespace circutBoardWorkFlow.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace circutBoardWorkFlow.Models
 {
     public class CircuitBoard
     {
         public uint Id { get; set; }
 
+        [Required]
+        public string Name { get; set; } = string.Empty;
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Updated { get; set; }
         public Status Status { get; set; }
@@ -14,6 +18,7 @@
             return new CircuitBoard
             {
                 Id = board.Id,
+                Name = board.Name,
                 Created = board.Created,
                 Updated = board.Updated,
                 History = HistoryRecord.ConvertFromEntity(board.HistoryRecords),
@@ -26,12 +31,16 @@
             Entity.CircuitBoard entity = new Entity.CircuitBoard
             {
                 Id = board.Id,
+                Name = board.Name,
                 Created = board.Created,
                 Updated = board.Updated,
                 Status = board.Status,
             };
-
-            entity.HistoryRecords = HistoryRecord.ConvertToEntity(board.History, entity);
+            
+            if (board.History != null && board.History.Count > 0)
+            {
+                entity.HistoryRecords = HistoryRecord.ConvertToEntity(board.History, entity);
+            }
 
             return entity;
         }

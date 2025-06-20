@@ -100,7 +100,7 @@ namespace circutBoardWorkFlow.Tests
 
             Assert.NotNull(history);
             Assert.True(history.IsSuccess);
-            Assert.Single(history.Value);
+            Assert.Single(history.Value!);
         }
     }
 }
