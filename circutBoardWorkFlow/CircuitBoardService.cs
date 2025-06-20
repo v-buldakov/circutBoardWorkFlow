@@ -42,14 +42,14 @@ namespace circutBoardWorkFlow
         {
             var board = await _circuitBoardContext.CircuitBoards.FindAsync(id);
 
-            if(board is null)
+            if (board is null)
                 return Result<CircuitBoard>.Failure(new(StatusCodes.Status404NotFound, "Not found", $"Board with {id} not found"));
 
 
             if (!availableStatusChange.TryGetValue(board.Status, out var nextStatus))
                 return Result<CircuitBoard>.Failure(new(StatusCodes.Status400BadRequest, "Bad request", "Not supported status"));
 
-            if(!nextStatus.Contains(newBoard.Status))
+            if (!nextStatus.Contains(newBoard.Status))
                 return Result<CircuitBoard>.Failure(new(StatusCodes.Status400BadRequest, "Bad request", $"Cant change status from {board.Status} to {newBoard.Status}"));
 
             _circuitBoardContext.HistoryRecords.Add(new Models.Entity.HistoryRecord
@@ -72,7 +72,7 @@ namespace circutBoardWorkFlow
         {
             var historyRecords = await _circuitBoardContext.HistoryRecords.AsNoTracking().Where(record => record.BoardId == id).ToArrayAsync();
 
-            if(historyRecords is null)
+            if (historyRecords is null)
                 return Result<ICollection<HistoryRecord>>.Success(Array.Empty<HistoryRecord>());
 
             return Result<ICollection<HistoryRecord>>.Success(HistoryRecord.ConvertFromEntity(historyRecords));

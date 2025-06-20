@@ -1,6 +1,0 @@
-@circutBoardWorkFlow_HostAddress = http://localhost:5152
-
-GET {{circutBoardWorkFlow_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
