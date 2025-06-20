@@ -15,13 +15,13 @@ namespace circutBoardWorkFlow.Controllers
         }
 
         [HttpPost, Route("/create")]
-        public async Task<Result<CircuitBoard>> Create(CircuitBoard newBoard) => await _circuitBoardService.Create(newBoard);
+        public async Task<Result<CircuitBoardViewModel>> Create(CircuitBoardViewModel newBoard) => await _circuitBoardService.Create(newBoard);
 
         [HttpPatch, Route("/update/{boardId}")]
-        public async Task<Result<CircuitBoard>> Update(uint boardId, [FromBody]CircuitBoard board) => await _circuitBoardService.Update(boardId, board);
+        public async Task<Result<CircuitBoardViewModel>> Update(uint boardId, [FromBody]CircuitBoardViewModel board) => await _circuitBoardService.Update(boardId, board);
 
         [HttpGet, Route("/history/{boardId}")]
-        public async Task<Result<ICollection<HistoryRecord>>> GetHistory(uint boardId) => await _circuitBoardService.GetHistory(boardId);
+        public async Task<Result<ICollection<HistoryRecordViewModel>>> GetHistory(uint boardId) => await _circuitBoardService.GetHistory(boardId);
 
     }
 }

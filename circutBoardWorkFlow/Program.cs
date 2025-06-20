@@ -12,7 +12,7 @@ internal class Program
         builder.Services.AddScoped<CircuitBoardService>();
         builder.Services.AddDbContextPool<CircuitBoardContext>(options =>
         {
-            options.UseInMemoryDatabase(databaseName: $"CircuitBoardContext_{Guid.NewGuid()}");
+            options.UseNpgsql(builder.Configuration.GetConnectionString("circuitBoard_db"));
         });
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

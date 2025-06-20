@@ -21,7 +21,7 @@ namespace circutBoardWorkFlow.Tests
         [Fact]
         public async Task Test1()
         {
-            var board = new CircuitBoard
+            var board = new CircuitBoardViewModel
             {
                 Created = DateTimeOffset.Now,
                 Status = Status.Registration
@@ -37,7 +37,7 @@ namespace circutBoardWorkFlow.Tests
         [Fact]
         public async Task Test2()
         {
-            var result = await service.Create(new CircuitBoard());
+            var result = await service.Create(new CircuitBoardViewModel());
 
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
@@ -54,7 +54,7 @@ namespace circutBoardWorkFlow.Tests
         [Fact]
         public async Task Test3()
         {
-            var result = await service.Create(new CircuitBoard());
+            var result = await service.Create(new CircuitBoardViewModel());
 
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);
@@ -77,7 +77,7 @@ namespace circutBoardWorkFlow.Tests
         [Fact]
         public async Task Test4()
         {
-            var result = await service.Create(new CircuitBoard());
+            var result = await service.Create(new CircuitBoardViewModel());
 
             Assert.NotNull(result);
             Assert.True(result.IsSuccess);

@@ -1,27 +1,27 @@
 ﻿namespace circutBoardWorkFlow.Models
 {
-    public class HistoryRecord
+    public class HistoryRecordViewModel
     {
         public uint Id { get; set; }
         public Status OldStatus { get; set; }
         public Status NewStatus { get; set; }
         public DateTimeOffset Updated { get; set; }
 
-        static public ICollection<HistoryRecord> ConvertFromEntity(ICollection<Entity.HistoryRecord>? records)
+        static public ICollection<HistoryRecordViewModel> ConvertFromEntity(ICollection<Entity.HistoryRecord>? records)
         {
             if (records == null || records.Count == 0)
                 return [];
             return [.. records.Select(CreateNewRecord)];
         }
 
-        static public ICollection<Entity.HistoryRecord> ConvertToEntity(ICollection<HistoryRecord> records, Entity.CircuitBoard board)
+        static public ICollection<Entity.HistoryRecord> ConvertToEntity(ICollection<HistoryRecordViewModel> records, Entity.CircuitBoard board)
         {
             return [.. records.Select(record => CreateNewEntity(board, record))];
         }
 
-        private static HistoryRecord CreateNewRecord(Entity.HistoryRecord record)
+        private static HistoryRecordViewModel CreateNewRecord(Entity.HistoryRecord record)
         {
-            return new HistoryRecord
+            return new HistoryRecordViewModel
             {
                 Id = record.Id,
                 OldStatus = record.OldStatus,
@@ -30,7 +30,7 @@
             };
         }
 
-        private static Entity.HistoryRecord CreateNewEntity(Entity.CircuitBoard board, HistoryRecord record)
+        private static Entity.HistoryRecord CreateNewEntity(Entity.CircuitBoard board, HistoryRecordViewModel record)
         {
             return new Entity.HistoryRecord 
             {
