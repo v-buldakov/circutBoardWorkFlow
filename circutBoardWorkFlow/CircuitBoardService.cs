@@ -25,6 +25,7 @@ namespace circutBoardWorkFlow
         {
             var board = new CircuitBoard
             {
+                Name = newBoard.Name,
                 Status = Status.Registration,
                 Created = DateTimeOffset.Now
             };
@@ -59,6 +60,7 @@ namespace circutBoardWorkFlow
                 NewStatus = newBoard.Status,
                 Updated = DateTimeOffset.Now
             });
+
             board.Status = newBoard.Status;
             board.Updated = DateTimeOffset.Now;
             await _circuitBoardContext.SaveChangesAsync();

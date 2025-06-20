@@ -1,4 +1,5 @@
 using circutBoardWorkFlow;
+using Microsoft.EntityFrameworkCore;
 
 internal class Program
 {
@@ -9,6 +10,10 @@ internal class Program
         // Add services to the container.
 
         builder.Services.AddScoped<CircuitBoardService>();
+        builder.Services.AddDbContextPool<CircuitBoardContext>(options =>
+        {
+            options.UseInMemoryDatabase(databaseName: $"CircuitBoardContext_{Guid.NewGuid()}");
+        });
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
