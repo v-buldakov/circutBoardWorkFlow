@@ -1,5 +1,4 @@
-﻿using circutBoardWorkFlow.Models;
-using circutBoardWorkFlow.Models.Entity;
+﻿using circutBoardWorkFlow.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace circutBoardWorkFlow
