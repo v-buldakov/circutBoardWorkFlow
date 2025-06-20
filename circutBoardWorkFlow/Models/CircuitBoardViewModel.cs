@@ -4,7 +4,7 @@ namespace circutBoardWorkFlow.Models
 {
     public class CircuitBoardViewModel
     {
-        public uint Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string Name { get; set; } = string.Empty;

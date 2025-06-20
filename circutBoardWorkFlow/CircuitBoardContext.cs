@@ -16,17 +16,5 @@ namespace circutBoardWorkFlow
 
         public DbSet<CircuitBoard> CircuitBoards { get; set; }
         public DbSet<HistoryRecord> HistoryRecords { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<CircuitBoard>()
-            .Property(e => e.Status)
-            .HasConversion(
-                v => v.ToString(),
-                v => (Status)Enum.Parse(typeof(Status), v)
-            );
-
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

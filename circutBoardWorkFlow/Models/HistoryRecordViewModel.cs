@@ -2,7 +2,7 @@
 {
     public class HistoryRecordViewModel
     {
-        public uint Id { get; set; }
+        public long Id { get; set; }
         public Status OldStatus { get; set; }
         public Status NewStatus { get; set; }
         public DateTimeOffset Updated { get; set; }

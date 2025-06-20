@@ -38,7 +38,7 @@ namespace circutBoardWorkFlow
             return Result<CircuitBoardViewModel>.Success(CircuitBoardViewModel.ConvertFromEntity(result));
         }
 
-        public async Task<Result<CircuitBoardViewModel>> Update(uint id, CircuitBoardViewModel newBoard)
+        public async Task<Result<CircuitBoardViewModel>> Update(long id, CircuitBoardViewModel newBoard)
         {
             var board = await _circuitBoardContext.CircuitBoards.FindAsync(id);
 
@@ -68,7 +68,7 @@ namespace circutBoardWorkFlow
             return Result<CircuitBoardViewModel>.Success(CircuitBoardViewModel.ConvertFromEntity(board));
         }
 
-        public async Task<Result<ICollection<HistoryRecordViewModel>>> GetHistory(uint id)
+        public async Task<Result<ICollection<HistoryRecordViewModel>>> GetHistory(long id)
         {
             var historyRecords = await _circuitBoardContext.HistoryRecords.AsNoTracking().Where(record => record.BoardId == id).ToArrayAsync();
 
